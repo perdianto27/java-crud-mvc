@@ -118,7 +118,8 @@ public class PenggunaController {
 
     //fungsi hapus
     public void hapus() {
-
+        String username=view.getTxtUsername().getText();
+        
         if (model.hapus(view.getTxtUsername().getText())) {
             JOptionPane.showMessageDialog(view, "berhasil simpan");
         } else {
