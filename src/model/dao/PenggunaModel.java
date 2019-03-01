@@ -86,7 +86,7 @@ public class PenggunaModel implements MasterDAO<Pengguna> {
     @Override
     public boolean hapus(String id) {
         try (Connection con = Database.KoneksiDB();
-                PreparedStatement st = con.prepareStatement(Q_DELETE)) {
+                PreparedStatement st = con.prepareStatement(Q_DELETE);) {
             // isi data statement( jangan salah urutan)
             st.setString(1, id);
 
@@ -95,7 +95,7 @@ public class PenggunaModel implements MasterDAO<Pengguna> {
             //hasilnya
             return (hasil == 1);//true jika 1, dan false jika 0
         } catch (SQLException ex) {
-            Logger.getLogger(PenggunaModel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
